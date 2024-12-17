@@ -3,10 +3,16 @@
   "module": "src/index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "prisma": "^6.0.1"
+  },
+  "scripts": {
+    "migrate": "bunx prisma migrate dev",
+    "generate": "bunx prisma generate",
+    "db:reset": "bunx prisma migrate reset --force --skip-seed"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "5.0.0"
   },
   "dependencies": {
     "@prisma/client": "^6.0.1"
